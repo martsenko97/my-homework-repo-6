@@ -1,0 +1,92 @@
+body {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+	background-color: blueviolet;
+}
+
+.container {
+	max-width: 1110px;
+	padding: 0 15px;
+	margin: 0 auto;
+	width: 100%;
+}
+
+.menu {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.menu-item {
+	padding: 20px;
+	cursor: pointer;
+	position: relative;
+}
+
+.menu-item:hover .menu-nested-first,
+.menu-nested-first-item:hover .menu-nested-second {
+	visibility: visible;
+	opacity: 1;
+	transform: translateY(0);
+}
+.menu-item:hover {
+	background-color: tomato;
+}
+
+.menu-item-content {
+	color: white;
+}
+
+.menu-icon {
+	display: inline-block;
+	position: relative;
+	padding: 5px;
+	user-select: none;
+}
+
+.menu-icon::after,
+.menu-icon::before {
+	content: ' ';
+	position: absolute;
+	height: 1px;
+	background-color: white;
+	left: 0;
+	width: 100%;
+}
+
+.menu-icon::before {
+	transform: rotate(90deg);
+}
+
+.menu-nested-first,
+.menu-nested-second {
+	position: absolute;
+	top: 56px;
+	height: auto;
+	left: 0;
+	background-color: tomato;
+	visibility: hidden;
+	opacity: 0;
+	transform: translateY(-1px);
+	transition: all 0.3s ease;
+}
+
+.menu-nested-second {
+	z-index: 100;
+	left: 100%;
+	width: 100%;
+	top: 0;
+}
+
+.menu-nested-first-item,
+.menu-nested-second-item {
+	padding: 16px;
+	cursor: pointer;
+	position: relative;
+}
+
+.menu-nested-first-item:hover,
+.menu-nested-second-item:hover {
+	background-color: #ef6347;
+}
